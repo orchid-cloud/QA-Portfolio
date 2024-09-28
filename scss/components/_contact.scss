@@ -1,0 +1,108 @@
+@use '../util' as u;
+
+.contact {
+  position: relative;
+  &__wrapper {
+    padding-block: u.rem(84);
+    @media (min-width: u.rem(1000)) {
+      display: grid;
+      grid-template-columns: repeat(2, u.rem(445));
+      justify-content: space-between;
+    }
+    @media (max-width: u.rem(1000)) {
+      max-width: u.rem(445);
+    }
+  }
+
+  &__text {
+    @media (max-width: u.rem(1000)) {
+      text-align: center;
+    }
+  }
+
+  &__headline {
+    margin-block-end: u.rem(20);
+
+    @media (min-width: u.rem(1000)) {
+      margin-block-end: u.rem(36);
+    }
+  }
+
+  &__rings {
+    position: absolute;
+    left: 0;
+    bottom: 97px;
+    translate: -75%;
+
+    @media (min-width: u.rem(600)) {
+      bottom: 47px;
+      translate: -75%;
+    }
+
+    @media (min-width: u.rem(1000)) {
+      bottom: 47px;
+      translate: -40%;
+    }
+  }
+
+  &__control {
+    display: flex;
+    position: relative;
+    margin-block-end: u.rem(32);
+    & input {
+      width: 100%;
+      padding-block: u.rem(16);
+      padding-inline: u.rem(24);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--c-white-text);
+      color: var(--c-white-text);
+
+      &::placeholder {
+        font-size: 1rem;
+        line-height: 1;
+        text-transform: uppercase;
+        opacity: 0.5;
+      }
+    }
+
+    & textarea {
+      width: 100%;
+      padding-block: u.rem(16);
+      padding-inline: u.rem(24);
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--c-white-text);
+      color: var(--c-white-text);
+
+      &::placeholder {
+        font-size: 1rem;
+        line-height: 1;
+        text-transform: uppercase;
+        opacity: 0.5;
+      }
+    }
+
+    & button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    &.align-right {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__invalid-icon {
+    display: none;
+    position: absolute;
+    width: u.rem(24);
+    height: u.rem(24);
+    right: 0;
+    translate: -50% 50%;
+  }
+}
+
+
